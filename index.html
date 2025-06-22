@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio BUT2 - Sciences des Données</title>
+<style>
+:root {
+  --primary: #1e3a5f;
+  --secondary: #f0f4f8;
+  --accent: #5886a5;
+  --text-dark: #1e1e1e;
+  --text-light: #ffffff;
+  --border: #d3dce6;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+html, body {
+  height: 100%;
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  background-color: var(--secondary);
+  color: var(--text-dark);
+  display: flex;
+  flex-direction: column;
+}
+header {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: var(--text-light);
+  padding: 2.5em 1em;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+header h1 {
+  font-size: 2.3rem;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+header p {
+  font-size: 1.1rem;
+  font-style: italic;
+}
+nav {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  border-bottom: 2px solid var(--border);
+}
+nav button {
+  background: none;
+  border: none;
+  padding: 1em 2em;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+nav button.active {
+  border-bottom: 3px solid var(--accent);
+  color: var(--accent);
+}
+nav button:hover {
+  background-color: var(--accent);
+  color: var(--text-light);
+}
+main {
+  flex: 1;
+  max-width: 1000px;
+  margin: auto;
+  padding: 2em;
+  background-color: white;
+  border-radius: 12px;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+.tab-content {
+  display: none;
+  animation: fadein 0.4s ease-in-out;
+}
+.tab-content.active {
+  display: block;
+}
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+h2 {
+  color: var(--primary);
+  font-size: 1.8rem;
+  margin-bottom: 1em;
+  border-left: 5px solid var(--accent);
+  padding-left: 0.6em;
+}
+p, ul {
+  margin-bottom: 1.5em;
+  line-height: 1.6;
+}
+ul {
+  padding-left: 1.5em;
+  list-style-type: disc;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin-top: 1em;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+th, td {
+  padding: 12px 15px;
+  border: 1px solid var(--border);
+  text-align: left;
+}
+thead {
+  background-color: var(--primary);
+  color: white;
+}
+tbody tr:nth-child(even) {
+  background-color: #f9fbfd;
+}
+footer {
+  background-color: #ffffff;
+  text-align: center;
+  padding: 1em;
+  font-size: 0.9rem;
+  color: #5a5a5a;
+  border-top: 1px solid var(--border);
+}
+/* === Images personnalisées === */
+.img-rotate {
+  transform: rotate(90deg);
+  width: 500px;
+  height: auto;
+  display: block;
+  margin: 10px auto;
+}
+.img-default {
+  width: 900px;
+  height: auto;
+  display: block;
+  margin: 10px auto;
+}
+.grande-image {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  display: block;
+  margin: 10px auto;
+}
+.image-container {
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+.image-source {
+  text-align: right;
+  font-size: 0.9em;
+  font-style: italic;
+  color: #555;
+  margin-top: -10px;
+  margin-right: 10px;
+}
+.image-container-rotate {
+  position: relative;
+  width: 500px;
+  margin: 0 auto 20px auto;
+}
+.image-container-rotate .image-source {
+  position: absolute;
+  bottom: 180px;
+  right: -200px;
+  font-size: 0.9em;
+  font-style: italic;
+  color: #555;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+</style>
+</head>
+<body>
+  <header>
+    <h1>Portfolio - BUT2 Sciences des Données</h1>
+    <p>MOIZARD Nathan · IUT · Année 2024-2025</p>
+  </header>
+  <nav>
+    <button class="active" onclick="showTab(event, 'presentation')">Présentation</button>
+    <button onclick="showTab(event, 'sae')">SAE</button>
+    <button onclick="showTab(event, 'stage')">Stage</button>
+    <button onclick="showTab(event, 'projection')">Projection</button>
+  </nav>
+  <main>
+    <section id="presentation" class="tab-content active">
+      <h2>Présentation</h2>
+      <p>Ce portfolio présente les compétences acquises au cours de mes deux années en BUT Sciences des Données à l’IUT de Vannes, ainsi que durant mon stage.</p>
+    </section>
+<section id="sae" class="tab-content">
+  <h2 style="color: #002244; font-size: 2rem; margin-bottom: 1rem;">Mes SAE</h2>
+  <!-- Bouton ouvrir/fermer tout -->
+  <button onclick="toggleAllDetails()" style="margin-bottom: 1em; padding: 10px 20px; border: none; background-color: var(--accent); color: white; border-radius: 6px; cursor: pointer;">
+    🔽 Voir le détail
+  </button>
+  <div style="display: flex; flex-direction: column; gap: 20px;">
+    <!-- Dataviz -->
+<details style="background-color: #f4f7fa; padding: 15px; border-radius: 8px;">
+  <summary style="cursor: pointer; color: #002244; font-size: 1.2rem;">📉 Datavisualisation Météo-France SAE 204</summary>
+  <img src="image/SAE 204 image 1.png" alt="Dataviz Météo-France" style="width: 100%; border-radius: 6px; margin: 10px 0;">
+  <p><strong>Compétences :</strong> Création de graphiques, synthèse visuelle</p>
+  <p><strong>Outils :</strong> Excel</p>
+  <p><strong>Résumé :</strong> Ce projet, réalisé sur une journée en collaboration avec Météo-France, regroupait des étudiants de toute la promotion. L'objectif était d'analyser librement des données météorologiques fournies pour plusieurs villes du Morbihan. Avec mon groupe, nous avons choisi de comparer les températures de Vannes et Lorient, en utilisant exclusivement Excel. Nous avons étudié l’évolution de la température, les épisodes de gel et de brouillard depuis les années 60. Nous avons observé une hausse moyenne des températures plus marquée à Lorient qu'à Vannes (+0,5 °C). Une hypothèse avancée pour expliquer cette différence est la présence de la base militaire à Lorient, qui pourrait influencer localement le climat. Cette piste mériterait une analyse plus approfondie.</p>
+</details>
+    <!-- Indicateurs de performance -->
+<details style="background-color: #f4f7fa; padding: 15px; border-radius: 8px;">
+  <summary style="cursor: pointer; color: #002244; font-size: 1.2rem;">📌 Indicateurs de performance SAE 205</summary>
+  <img src="image/SAE 205 image 1.png" alt="Prévision de données temporelles" style="width: 100%; border-radius: 6px; margin: 10px 0;">
+  <p><strong>Compétences :</strong> Création et interprétation d’indicateurs, reporting</p>
+  <p><strong>Outils :</strong> Excel, R</p>
+  <p><strong>Résumé :</strong> Ce projet, mené en groupe sur trois jours, consistait à gérer une entreprise virtuelle dans un environnement concurrentiel simulé. Chaque équipe devait élaborer une stratégie initiale puis prendre des décisions annuelles sur la production, les investissements et les ventes, en s’adaptant aux aléas du marché (nouveaux produits, événements imprévus, etc.). L’objectif était d’optimiser les performances économiques à travers des indicateurs de suivi comme le chiffre d’affaires, le résultat net ou les parts de marché. Ce jeu de simulation nous a confrontés à la complexité de la gestion d’entreprise et à l'importance des décisions stratégiques. Une erreur de calcul a entraîné une perte importante à mi-parcours, illustrant bien les enjeux réels de la prise de risque et du pilotage d’activité.</p>
+</details>
+    <!-- Séries temporelles -->
+<details style="background-color: #f4f7fa; padding: 15px; border-radius: 8px;">
+  <summary style="cursor: pointer; color: #002244; font-size: 1.2rem;">⏱️ Prévision de données temporelles SAE 303</summary>
+  <img src="image/SAE 303 image 1.jpg" alt="Prévision de données temporelles" style="width: 100%; border-radius: 6px; margin: 10px 0;">
+  <p><strong>Compétences :</strong> Séries temporelles, ARIMA</p>
+  <p><strong>Outils :</strong> R</p>
+  <p><strong>Résumé :</strong> En groupe de 4, nous avons étudié l’évolution du trafic aérien des aéroports parisiens afin de déterminer s’il était revenu à la normale après la crise du Covid-19. L’objectif était de produire une affiche de 4 pages présentant notre analyse. En excluant les années de la pandémie, nous avons appliqué des méthodes de séries temporelles vues en cours (dont les modèles ARIMA) pour comparer les tendances avant et après la crise. L’analyse a été réalisée avec R, tandis que la mise en forme de l'affiche a été faite sous Word. Ce projet nous a permis de mettre en pratique les outils statistiques pour répondre à une problématique réelle et actuelle.</p>
+</details>
+    <!-- Spotify -->
+    <details style="background-color: #f4f7fa; padding: 15px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+      <summary style="cursor: pointer; color: #002244; font-size: 1.2rem;">🎵 Recommandations musicales avec Spotify SAE 401</summary>
+      <img src="image/SAE 402 image 1.png" alt="Dashboard Spotify" style="width: 100%; border-radius: 6px; margin: 10px 0;">
+      <p><strong>Compétences :</strong> Analyse de données, clustering, visualisation interactive</p>
+      <p><strong>Outils :</strong> R, Shiny, ggplot2</p>
+    </details>
+
+  </div>
+</section>
+<section id="stage" class="tab-content">
+  <h2>Compétences issues du stage</h2>
+  <ul>
+    <li>
+      Utilisation de MyReport pour la création de reporting automatisés<br>
+      ➤ 2.3.1. Ressource R2.01 : Reporting et Datavisualisation<br>
+      ➤ 1.3.1. Ressource R3.01 : Utilisation avancée d’outils de reporting<br>
+      ➤ 1.3.2. Ressource R3.02 : Systèmes d’information décisionnels
+    </li>
+    <li>
+      Requêtes SQL pour interroger et structurer les données<br>
+      ➤ 1.3.2. Ressource R1.02 : Bases de données relationnelles 1<br>
+      ➤ 2.3.2. Ressource R2.02 : Bases de données relationnelles 2
+    </li>
+  </ul>
+  <p>Ce stage m’a permis de consolider mes compétences en reporting, en structuration de données ainsi que la gestion de projet.</p>
+<div class="image-container-rotate">
+  <img src="image/Analyse temporelle.png" alt="Exemple d'analyse temporelle" class="img-rotate">
+  <div class="image-source">Source : MyReport Page</div>
+</div>
+<div class="image-container">
+  <h3>Maquette des formulaires</h3>
+  <img src="image/Maquette.png" alt="Exemple de maquette de reporting" class="img-default">
+  <p class="image-source">Source : PowerPoint</p>
+</div>
+</section>
+<section id="projection" class="tab-content">
+  <h2>Projection</h2>
+  <p>Recherche activement une alternance depuis début avril. Si possible, en trouver une dans la modélisation statistique, en lien avec le parcours Exploration et Modélisation Statistique (EMS).</p>
+</section>
+  </main>
+  <footer>
+    <p>© 2025 - Portfolio BUT2 Sciences des Données</p>
+  </footer>
+  <script>
+    function showTab(event, tabId) {
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+    }
+    let allOpen = false;
+    function toggleAllDetails() {
+      const detailsList = document.querySelectorAll('#sae details');
+      allOpen = !allOpen;
+      detailsList.forEach(d => d.open = allOpen);
+      const toggleBtn = event.currentTarget;
+      toggleBtn.textContent = allOpen ? '🔼 Voir le détail' : '🔽 Voir le détail';
+    }
+  </script>
+</body>
+</html>
